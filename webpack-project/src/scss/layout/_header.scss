@@ -1,0 +1,73 @@
+.header {
+    padding: 3.7vw 7.6vw;
+    background-color: $background-accent;
+    font-family: "Inika";
+    font-size: 16px;
+
+    @include media-tablet {
+        padding: 5.9vw 4.4vw;
+    }
+
+    .menu {
+        @include media-small-tablet {
+            display: none;
+        }
+    }
+
+    @include media-mobile {
+        padding: 7.5vw 2.6vw;
+    }
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    &__link {
+        svg path {
+            transition: stroke 0.3s ease-in-out;
+        }
+
+        &:hover svg path {
+            stroke: $accent;
+        }
+    }
+
+    @include media-mobile {
+        margin-left: -2px;
+    }
+
+    &__text {
+        @include media-tablet {
+            margin-left: -5px;
+        }
+    }
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    gap: 46px;
+    padding-top: 7px;
+    padding-right: 3px;
+
+    &__link {
+        color: $links-nav-color;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            color: $accent;
+
+            &--active {
+                color: black;
+            }
+        }
+
+        &--active {
+            color: $accent;
+        }
+    }
+}
